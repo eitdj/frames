@@ -354,6 +354,13 @@ class Basic_Actions:
         else:
             self.logger.logger.error("element is not displayed")
 
+    def close_tab_by_index(self,index_number):
+        self.log_my_keyword_name_and_argument()
+        self.select_tab_by_index(index_number)
+        self.driver.close()
+        self.driver.switch_to.window(self.driver.find_element[0])
+
+
     def close_current_opened_tab(self):
         self.log_my_keyword_name_and_argument()
         self.driver.close()
