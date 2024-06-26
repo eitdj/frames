@@ -334,7 +334,6 @@ class Basic_Actions:
         else:
             self.logger.logger.error("element is not displayed")
 
-
     def get_check_box_value(self,locator):
         self.log_my_keyword_name_and_argument()
         element = self.get_web_element(locator)
@@ -354,6 +353,13 @@ class Basic_Actions:
             self.logger.logger.info("element is selected")
         else:
             self.logger.logger.error("element is not displayed")
+
+    def close_current_opened_tab(self):
+        self.log_my_keyword_name_and_argument()
+        self.driver.close()
+        self.driver.switch_to.window(self.driver.window_handles[0])
+
+
 
 
 
