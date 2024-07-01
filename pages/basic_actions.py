@@ -491,10 +491,10 @@ class BasicActions:
             output_list.append(element.text)
         return output_list
 
-    # def get_element_text_of_the_object(self,locator):
-    #     self.log_my_keyword_name_and_argument()
-    #     element = self.get_web_element(locator)
-    #     return element.text
+    def get_element_text_of_the_object(self,locator):
+        self.log_my_keyword_name_and_argument()
+        element = self.get_web_element(locator)
+        return element.text
 
     def get_element_by_index(self, locator, pos):
         self.log_my_keyword_name_and_argument()

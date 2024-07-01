@@ -9,7 +9,7 @@ from pages.basic_actions import BasicActions
 #     basic_action = BasicActions(driver = None)
 #     basic_action.maximize_browser_window()
 #     basic_action.open_my_browser()
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def open_browser_test_startup(request):
     # Initialize Chrome WebDriver without ChromeDriverManager
     options = webdriver.ChromeOptions()

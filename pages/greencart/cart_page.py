@@ -8,6 +8,7 @@ class CartPage(BasicActions):
     promo_code_input = (By.CLASS_NAME, "promoCode")
     promo_code_apply = (By.CLASS_NAME, "promoBtn")
     promo_info_message = (By.CLASS_NAME, "promoInfo")
+    invalid_info_message = "Empty code ..!"
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -19,14 +20,15 @@ class CartPage(BasicActions):
         self.click_me(self.place_order_button)
 
     def apply_promo_code(self):
-        self.get_web_element(self.promo_code_input)
+        self.wait_for_objects(self.promo_code_input,10)
         self.type_words(self.promo_code_input,"Rahul")
         self.click_me(self.promo_code_apply)
 
     def validate_invalid_message(self):
         self.wait_for_element_to_be_visible(self.promo_info_message)
-        element = self.get_text_of_the_object()
-        assert element == self.promo_info_message
+        element = self.get_text_of_the_object(self.promo_info_message)
+        print(element)
+        assert element == self.invalid_info_message
 
 
 
