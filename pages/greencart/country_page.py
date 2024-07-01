@@ -8,7 +8,9 @@ class CountryPage(BasicActions):
     agree_checkbox = (By.CLASS_NAME, "chkAgree")
     proceed_button = (By.XPATH, "//button[text()='Proceed']")
     order_success = (By.XPATH, "//span[text() ='Thank you, your order has been placed successfully ']")
-    order_success_message = "Thank you, your order has been placed successfully "
+    order_success_message = "Thank you, your order has been placed successfully \n You'll be redirected to Home page shortly!!"
+
+
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -26,5 +28,6 @@ class CountryPage(BasicActions):
         self.click_me(self.proceed_button)
 
     def validate_the_order_message(self):
-        received_message = self.get_text_of_the_object(self.order_success_message)
+        received_message = self.get_element_text_of_the_object(self.order_success)
+        print(received_message)
         assert self.order_success_message == received_message
