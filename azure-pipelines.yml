@@ -15,7 +15,7 @@ steps:
     echo "Current directory: $(System.DefaultWorkingDirectory)"
   displayName: 'Print Current Directory'
 
-- script: pytest html = report.html
+- script: pytest --html=report.html
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
