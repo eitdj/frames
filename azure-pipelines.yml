@@ -10,7 +10,7 @@ pool:
   name: local
 
 steps:
-- script: pytest test_validate_invalid_promo_code_message
+- script: pytest -k 'test_validate_invalid_promo_code_message'
   displayName: 'Run a one-line script'
 
 - script: |
