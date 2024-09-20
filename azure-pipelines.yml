@@ -10,7 +10,14 @@ pool:
   name: local
 
 steps:
-- script: pytest
+- script: 
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.12.3'
+    addToPath: true
+    architecture: 'x64'
+
+- script: pytest test_validate_invalid_promo_code_message
   displayName: 'Run a one-line script'
 
 - script: |
