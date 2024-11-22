@@ -1,1 +1,4 @@
 ./idea
+/reports
+.pyc
+/__pycache__
